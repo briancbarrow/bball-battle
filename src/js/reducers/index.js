@@ -1,21 +1,37 @@
-
+import * as actions from '../actions/index';
 
 const initialState = {
-  movie1: null,
-  movie2: null,
-  data1: [],
-  data2: [],
+  player1: [{}],
+  player2: [{}],
+  data1: [{}],
+  data2: [{}],
   winner: null
 
 }
 
 export const battleReducer = (state=initialState, action) => {
-  if (action.type === actions.NEW_MOVIES) {
-      let arr = [];
-      arr.push(action.first, action.second);
-      return Object.assign({}, state, {movie1: arr[0], movie2: arr[1]})
+  if (action.type === actions.NEW_PLAYERS) {
+    let obj = {}
+    if(action.pos === "data1") {
+      obj = {player1: action.data}
+    } else {
+      obj = {player2: action.data}
+    }
+    console.log(action.data)
+    return Object.assign({}, state, obj)
     }
     else if (action.type === actions.NEW_DATA) {
-      return Object.assign({}, state, {data1: action.data1, data2: action.data2})
+      let obj = {}
+      if(action.pos === "data1") {
+        obj = {data1: action.data}
+      } else {
+        obj = {data2: action.data}
+      }
+      console.log(action.data)
+      return Object.assign({}, state, obj)
     }
+    else if (action.type === actions.TEST) {
+      return state
+    }
+    return state
 }

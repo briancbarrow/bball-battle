@@ -1,4 +1,5 @@
-import fetch from 'isomorphic-fetch'
+// import fetch from 'isomorphic-fetch'
+import axios from 'axios'
 
 // export const GET_RANDOM_PLAYERS = 'GET_RANDOM_PLAYERS';
 // export const getRandomPlayers = (first, second) => ({
@@ -7,23 +8,69 @@ import fetch from 'isomorphic-fetch'
 //   second
 // });
 
-export const NEW_MOVIES = 'NEW_MOVIES';
-export const newMovies = (first, second) => ({
-  type: NEW_MOVIES,
-  first,
-  second
+export const NEW_PLAYERS = 'NEW_PLAYERS';
+export const newPlayers = (data, pos) => ({
+  type: NEW_PLAYERS,
+  data,
+  pos
 });
 
 export const NEW_DATA = 'NEW_DATA';
-export const newData = (data1, data2) => ({
+export const newData = (data, pos) => ({
   type: NEW_DATA,
-  data1,
-  data2
+  data,
+  pos
 });
 
-export const COMP_MOVIES = 'COMP_MOVIES';
-export const compMovies = (first, second) => ({
-  type: COMP_MOVIES,
+export const COMP_PLAYERS = 'COMP_PLAYERS';
+export const compPlayers = (first, second) => ({
+  type: COMP_PLAYERS,
   first,
   second
 });
+
+export const TEST = 'TEST';
+export const test = (data) => ({
+  type: TEST,
+  data
+});
+
+export const advSplits = (playerId, pos) => {
+  return dispatch => {
+    return axios.post('https://bball-server.herokuapp.com/playerSplits', {
+      Season: "2016-17",
+      SeasonType: "Regular Season",
+      LeagueID: "00",
+      PlayerID: playerId,
+      MeasureType: "Advanced",
+      PerMode: "Per48",
+      PlusMinus: "N",
+      PaceAdjust: "N",
+      Rank: "N",
+      Outcome: "",
+      Location: "",
+      Month: "0",
+      SeasonSegment: "",
+      DateFrom: "",
+      DateTo: "",
+      OpponentTeamID: "0",
+      VsConference: "",
+      VsDivision: "",
+      GameSegment: "",
+      Period: "0",
+      LastNGames: "0"
+    })
+    .then(res => dispatch(newData(res.data, pos)))
+  }
+}
+
+export const playerInfo = (playerId, pos) => {
+  return dispatch => {
+    return axios.post('https://bball-server.herokuapp.com/playerInfo', {
+      SeasonType: "Regular Season",
+      LeagueID: "00",
+      PlayerID: playerId
+    })
+    .then(res => dispatch(newPlayers(res.data, pos)))
+  }
+}

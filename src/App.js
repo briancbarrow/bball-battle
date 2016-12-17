@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {connect}  from 'react-redux';
+// import * as actions from './js/actions/index';
 import './App.css';
+import Player from './js/components/player';
+import { Card } from 'semantic-ui-react';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Card.Group itemsPerRow={2}>
+          <Player id="201566" pos="data1"/>
+          <Player id="201565" pos="data2"/>
+        </Card.Group>
       </div>
     );
   }
 }
 
-export default App;
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     advSplits: (playerId) => {
+//       return dispatch(actions.advSplits(playerId))
+//     }
+//   }
+// }
+
+export default connect()(App);
