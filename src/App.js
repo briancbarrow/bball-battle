@@ -4,7 +4,6 @@ import {connect}  from 'react-redux';
 import './App.css';
 import Player from './js/components/player';
 import { Card } from 'semantic-ui-react';
-import Sound from 'react-sound'
 
 class App extends Component {
   render() {
@@ -16,7 +15,6 @@ class App extends Component {
           <Player id="201566" pos="data1"/>
           <Player id="201565" pos="data2"/>
         </Card.Group>
-        <Sound url="../public/sound/cool.mp3" playStatus={Sound.status.PLAYING} />
       </div>
     );
   }

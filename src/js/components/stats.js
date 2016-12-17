@@ -7,7 +7,7 @@ class Stats extends React.Component {
   render(props) {
     console.log("playerInfo", this.props.playerInfo)
     return (
-        <Card>
+        <Card className='playerCard'>
           <Image src={`http://stats.nba.com/media/players/230x185/${this.props.playerInfo[0].personId}.png`} size="small" centered/>
           <Card.Content>
             <Card.Header>
@@ -15,7 +15,7 @@ class Stats extends React.Component {
             </Card.Header>
           </Card.Content>
 
-          <Table celled>
+          <Table celled inverted>
             <Table.Header>
               <Table.Row>
                 <Table.HeaderCell textAlign="center">Stat</Table.HeaderCell>
@@ -25,7 +25,7 @@ class Stats extends React.Component {
             <Table.Body>
               <Table.Row>
                 <Table.Cell textAlign="center">
-                  Effg:
+                  Effective FG%:
                 </Table.Cell>
                 <Table.Cell textAlign="center">
                   {this.props.data[0].efgPct}
@@ -33,7 +33,7 @@ class Stats extends React.Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell textAlign="center">
-                  Def Rtg:
+                  Defensive Rating:
                 </Table.Cell>
                 <Table.Cell textAlign="center">
                   {this.props.data[0].defRating}
@@ -41,7 +41,7 @@ class Stats extends React.Component {
               </Table.Row>
               <Table.Row>
                 <Table.Cell textAlign="center">
-                  Off Rtg:
+                  Offensive Rating:
                 </Table.Cell>
                 <Table.Cell textAlign="center">
                   {this.props.data[0].offRating}

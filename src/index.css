@@ -3,3 +3,14 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.ui.card>.card {
+  background-color: #2b2b2b;
+}
+
+.playerCard {
+  background-color: #2b2b2b;
+}
+.header {
+  color: white;
+}
