@@ -8,7 +8,7 @@ class Stats extends React.Component {
     console.log("playerInfo", this.props.playerInfo)
     return (
         <Card>
-          <Image src={this.props.data[0].image ? this.props.data[0].image : ''} />
+          <Image src={`http://stats.nba.com/media/players/230x185/${this.props.playerInfo[0].personId}.png`} size="small" centered/>
           <Card.Content>
             <Card.Header>
               {this.props.playerInfo[0].displayFirstLast}
