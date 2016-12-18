@@ -1,12 +1,15 @@
 import * as actions from '../actions/index';
+import {test} from '../test'
 
 const initialState = {
+  id1: null,
+  id2: null,
   player1: [{}],
   player2: [{}],
   data1: [{}],
   data2: [{}],
-  winner: null
-
+  winner: null,
+  playerList: test
 }
 
 export const battleReducer = (state=initialState, action) => {
@@ -17,7 +20,6 @@ export const battleReducer = (state=initialState, action) => {
     } else {
       obj = {player2: action.data}
     }
-    console.log(action.data)
     return Object.assign({}, state, obj)
     }
     else if (action.type === actions.NEW_DATA) {
@@ -27,7 +29,15 @@ export const battleReducer = (state=initialState, action) => {
       } else {
         obj = {data2: action.data}
       }
-      console.log(action.data)
+      return Object.assign({}, state, obj)
+    }
+    else if (action.type === actions.NEW_ID) {
+      let obj = {}
+      if(action.pos === "data1") {
+        obj = {id1: action.id}
+      } else {
+        obj = {id2: action.id}
+      }
       return Object.assign({}, state, obj)
     }
     else if (action.type === actions.TEST) {

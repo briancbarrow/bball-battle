@@ -5,7 +5,6 @@ import { Card, Image, Table } from 'semantic-ui-react'
 class Stats extends React.Component {
 
   render(props) {
-    console.log("playerInfo", this.props.playerInfo)
     return (
         <Card className='playerCard'>
           <Image src={`http://stats.nba.com/media/players/230x185/${this.props.playerInfo[0].personId}.png`} size="small" centered/>

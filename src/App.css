@@ -13,3 +13,25 @@
 .App-intro {
   font-size: large;
 }
+
+form input {
+  display: inline-block;
+  padding: 2px;
+  margin: 10px 15px;
+  width: 45%;
+  border: none;
+  border-bottom: solid 1px green;
+}
+
+input:focus {
+  outline: none;
+}
+
+form button {
+  display: block;
+  margin: auto;
+}
+
+form {
+  margin-bottom: 15px;
+}

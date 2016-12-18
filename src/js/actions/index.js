@@ -15,6 +15,13 @@ export const newPlayers = (data, pos) => ({
   pos
 });
 
+export const NEW_ID = 'NEW_ID';
+export const newId = (id, pos) => ({
+  type: NEW_ID,
+  id,
+  pos
+});
+
 export const NEW_DATA = 'NEW_DATA';
 export const newData = (data, pos) => ({
   type: NEW_DATA,
@@ -75,15 +82,20 @@ export const playerInfo = (playerId, pos) => {
   }
 }
 
-// export const insertInfo = () => {
-//   return dispatch => {
-//     return axios.post('http://stats.nba.com/stats/commonallplayers', {
-//       Season: "2016-17",
-//       LeagueID: "00",
-//       IsOnlyCurrentSeason: "1"
-//     })
-//     .then(res => {
-//       dispatch(insertInfo(playerArr))
-//     })
-//   }
-// }
+export const insertInfo = () => {
+  return dispatch => {
+    return axios.post('https://bball-server.herokuapp.com/Info', {
+      GameScope: "",
+      LeagueID: "00",
+      PlayerOrTeam: "Player",
+      PlayerScope: "",
+      Season: "2016-17",
+      SeasonType: "Regular Season",
+      StatType: ""
+    })
+    .then(res => {
+      console.log(res.data)
+      dispatch(test(res.data))
+    })
+  }
+}
