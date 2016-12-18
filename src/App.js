@@ -31,14 +31,14 @@ class App extends Component {
           <Player id="201566" pos="data1"/>
           <Player id="201565" pos="data2"/>
         </Card.Group>
-        /*<form onSubmit={this.handleSubmit}>
-            <button type="submit">Submit</button>
-        </form>*/
+
       </div>
     );
   }
 }
-
+/*<form onSubmit={this.handleSubmit}>
+    <button type="submit">Submit</button>
+</form>*/
 // const mapDispatchToProps = (dispatch) => {
 //   return {
 //     insertInfo: (playerArr) => {
