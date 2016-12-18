@@ -3,12 +3,14 @@ import {connect}  from 'react-redux';
 import * as actions from './js/actions/index';
 import './App.css';
 import Player from './js/components/player';
+import Option from './js/components/ListOptions';
 import { Card, Button } from 'semantic-ui-react';
 
 class App extends Component {
   constructor(props) {
       super(props);
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.getDatalist = this.getDatalist.bind(this);
   }
 
   handleSubmit(event) {
@@ -21,12 +23,23 @@ class App extends Component {
     this.props.newId(this.props.playerList[twoIndex].playerId, "data2")
   }
 
+  getDatalist() {
+    let options = ''
+    for(let i = 0; i < this.props.playerList.length; i++) {
+      options += '<option value="' + this.props.playerList[i].firstName + ' ' + this.props.playerList[i].lastName +'">'
+    }
+    return options
+  }
+
   render() {
     return (
       <div className="App">
         <h1 className="main-header">BBALL BATTLE</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="player1" placeholder="Enter Player 1" required/>
+          <input type="text" name="player1" list="player1-list" placeholder="Enter Player 1" required/>
+          <datalist id="player1-list">
+            <Option />
+          </datalist>
           <input type="text" name="player2" placeholder="Enter Player 2" required/>
           <Button positive type="submit">Submit</Button>
         </form>
