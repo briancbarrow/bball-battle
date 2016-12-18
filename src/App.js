@@ -31,8 +31,8 @@ class App extends Component {
           <Button positive type="submit">Submit</Button>
         </form>
         <Card.Group itemsPerRow={2}>
-          {(this.props.id1) ? <Player id={this.props.id1} pos="data1"/> : ''}
-          {(this.props.id1) ? <Player id={this.props.id2} pos="data2"/> : ''}
+          {(this.props.id1) ? <Player id={this.props.id1} pos="data1"/> : <Player id="203518" pos="data1"/>}
+          {(this.props.id1) ? <Player id={this.props.id2} pos="data2"/> : <Player id="203500" pos="data2"/>}
 
         </Card.Group>
       </div>
