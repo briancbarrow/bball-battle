@@ -8,7 +8,7 @@ class Player extends React.Component {
   //   super(props)
   // }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.advSplits(this.props.id, this.props.pos)
     this.props.playerInfo(this.props.id, this.props.pos)
   }
@@ -34,6 +34,8 @@ class Player extends React.Component {
 
   const mapStateToProps = (state) => {
     return {
+        id1: state.id1,
+        id2: state.id2,
         data1: state.data1,
         data2: state.data2,
         player1: state.player1,

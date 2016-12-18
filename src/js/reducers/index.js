@@ -40,6 +40,9 @@ export const battleReducer = (state=initialState, action) => {
       }
       return Object.assign({}, state, obj)
     }
+    else if (action.type === actions.CLEAR_DATA) {
+      return Object.assign({}, state, {data1: [{}], data2: [{}], id1: null, id2: null})
+    }
     else if (action.type === actions.TEST) {
       return state
     }

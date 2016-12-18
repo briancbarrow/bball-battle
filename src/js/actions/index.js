@@ -36,6 +36,11 @@ export const compPlayers = (first, second) => ({
   second
 });
 
+export const CLEAR_DATA = 'CLEAR_DATA';
+export const clearData = () => ({
+  type: CLEAR_DATA
+});
+
 export const TEST = 'TEST';
 export const test = (data) => ({
   type: TEST,

@@ -69,4 +69,15 @@ class Stats extends React.Component {
   }
 }
 
-export default connect()(Stats);
+const mapStateToProps = (state) => {
+  return {
+      id1: state.id1,
+      id2: state.id2,
+      data1: state.data1,
+      data2: state.data2,
+      player1: state.player1,
+      player2: state.player2
+  }
+}
+
+export default connect(mapStateToProps, null)(Stats);
