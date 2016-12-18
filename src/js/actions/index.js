@@ -74,3 +74,16 @@ export const playerInfo = (playerId, pos) => {
     .then(res => dispatch(newPlayers(res.data, pos)))
   }
 }
+
+// export const insertInfo = () => {
+//   return dispatch => {
+//     return axios.post('http://stats.nba.com/stats/commonallplayers', {
+//       Season: "2016-17",
+//       LeagueID: "00",
+//       IsOnlyCurrentSeason: "1"
+//     })
+//     .then(res => {
+//       dispatch(insertInfo(playerArr))
+//     })
+//   }
+// }

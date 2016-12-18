@@ -6,6 +6,22 @@ import Player from './js/components/player';
 import { Card } from 'semantic-ui-react';
 
 class App extends Component {
+  constructor(props) {
+      super(props);
+      // this.guessNumber = this.guessNumber.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+      // this.updateDirFeedback = this.updateDirFeedback.bind(this);
+      // this.updateDistFeedback = this.updateDistFeedback.bind(this);
+      // this.updateDistance = this.updateDistance.bind(this);
+      // this.getFewest = this.getFewest.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    let arr = [];
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -15,6 +31,9 @@ class App extends Component {
           <Player id="201566" pos="data1"/>
           <Player id="201565" pos="data2"/>
         </Card.Group>
+        /*<form onSubmit={this.handleSubmit}>
+            <button type="submit">Submit</button>
+        </form>*/
       </div>
     );
   }
@@ -22,8 +41,8 @@ class App extends Component {
 
 // const mapDispatchToProps = (dispatch) => {
 //   return {
-//     advSplits: (playerId) => {
-//       return dispatch(actions.advSplits(playerId))
+//     insertInfo: (playerArr) => {
+//       return dispatch(actions.insertInfo(playerArr))
 //     }
 //   }
 // }
