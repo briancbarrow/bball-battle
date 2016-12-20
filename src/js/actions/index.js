@@ -29,6 +29,12 @@ export const newData = (data, pos) => ({
   pos
 });
 
+export const UPDATE_WINNER = 'UPDATE_WINNER';
+export const updateWinner = (winner) => ({
+  type: UPDATE_WINNER,
+  winner
+});
+
 export const COMP_PLAYERS = 'COMP_PLAYERS';
 export const compPlayers = (first, second) => ({
   type: COMP_PLAYERS,

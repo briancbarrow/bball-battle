@@ -15,7 +15,7 @@ class Player extends React.Component {
 
   render() {
     return (
-      <Stats data={(this.props.pos === "data1") ? this.props.data1 : this.props.data2} playerInfo={(this.props.pos === "data1") ? this.props.player1 : this.props.player2}/>
+      <Stats pos={this.props.pos} data={(this.props.pos === "data1") ? this.props.data1 : this.props.data2} playerInfo={(this.props.pos === "data1") ? this.props.player1 : this.props.player2}/>
     )
   }
 }

@@ -9,7 +9,14 @@ const initialState = {
   data1: [{}],
   data2: [{}],
   winner: null,
-  playerList: test
+  playerList: test,
+  stats: [
+    {stat: "Effective FG%", value: "efgPct"},
+    {stat: "Defensive Rating", value: "defRating"},
+    {stat: "Offensive Rating", value: "offRating"},
+    {stat: "Assist/TO", value: "astTo"},
+    {stat: "PIE", value: "pie"}
+  ]
 }
 
 export const battleReducer = (state=initialState, action) => {
@@ -41,7 +48,11 @@ export const battleReducer = (state=initialState, action) => {
       return Object.assign({}, state, obj)
     }
     else if (action.type === actions.CLEAR_DATA) {
-      return Object.assign({}, state, {data1: [{}], data2: [{}], id1: null, id2: null})
+      return Object.assign({}, state, {data1: [{}], data2: [{}], id1: null, id2: null, winner: null})
+    }
+    else if (action.type === actions.UPDATE_WINNER) {
+      console.log(action.winner)
+      return Object.assign({}, state, {winner: action.winner})
     }
     else if (action.type === actions.TEST) {
       return state

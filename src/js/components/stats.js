@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Card, Image, Table } from 'semantic-ui-react'
+import { Card, Image, Table, Rating } from 'semantic-ui-react'
 
 class Stats extends React.Component {
 
@@ -13,7 +13,7 @@ class Stats extends React.Component {
               {this.props.playerInfo[0].displayFirstLast}
             </Card.Header>
           </Card.Content>
-
+          {(this.props.winner === this.props.pos) ? <Rating icon='star' size='massive' defaultRating={1} maxRating={1} /> : ''}
           <Table celled inverted>
             <Table.Header>
               <Table.Row>
@@ -76,7 +76,8 @@ const mapStateToProps = (state) => {
       data1: state.data1,
       data2: state.data2,
       player1: state.player1,
-      player2: state.player2
+      player2: state.player2,
+      winner: state.winner
   }
 }
 
