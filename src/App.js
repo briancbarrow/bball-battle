@@ -66,11 +66,11 @@ class App extends Component {
       <div className="App">
         <h1 className="main-header">BBALL BATTLE</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="player1" list="player1-list" placeholder="Enter Player 1" required/>
+          <input type="text" name="player1" list="player1-list" placeholder="Enter Player 1, eg: Kevin Durant" required/>
           <datalist id="player1-list">
             <Options />
           </datalist>
-          <input type="text" name="player2" list="player2-list" placeholder="Enter Player 2" required/>
+          <input type="text" name="player2" list="player2-list" placeholder="Enter Player 2, eg: Gordon Hayward" required/>
           <datalist id="player2-list">
             <Options />
           </datalist>

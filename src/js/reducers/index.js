@@ -51,7 +51,6 @@ export const battleReducer = (state=initialState, action) => {
       return Object.assign({}, state, {data1: [{}], data2: [{}], id1: null, id2: null, winner: null})
     }
     else if (action.type === actions.UPDATE_WINNER) {
-      console.log(action.winner)
       return Object.assign({}, state, {winner: action.winner})
     }
     else if (action.type === actions.TEST) {
