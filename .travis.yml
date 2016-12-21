@@ -1,0 +1,17 @@
+language: node_js
+node_js: node
+services:
+- mongodb
+addons:
+  apt:
+    sources:
+    - mongodb-3.2-precise
+    packages:
+    - mongodb-org-server
+deploy:
+  provider: heroku
+  api_key:
+    secure: cjb6foAEdfm4K09xVODzfSuwVCJ+C/lQbKpZzYyui9oG6uiG9RWRW1CbxNrqn8gT2JaCMQ64Spv5r2t8Rbpk3d5NW29yFkhTeu7z4UjTlLkaVU7u+Rn9THBfZCiM2COzfkqDA8p0CMAIciSs0CSr1/305vaq0chv8XI5IFKMzXFIQ4LIsdv1b8+iaBARwEcHQh0NT9zhdmU8i2LtqkF/DKBd4/84mCnhfEuq4G75MLsj3BgT0DQt7lrDfRUlMag2haZiBbrRInvqw+48EexcDvRL8bjv/6wnMSJ250MkAZpmq7T9htTCZx37QtW0A/YvUjngQtHHR/30BRUCBJK1ynLm5Nd7YN8E1at0hqyY0lNgtzkR3X/M+iWADn4531+Vssto7tF2oKh5e3M9HQsVJ3MHzlREbUoQXAzYnuOmJPUiill9QCbraVdlYN7/gqmhEZKblwPnLvCdrGKo1FHgOKF84FRaXKzvnZfWjqtqe6+E8+8FzZk7DmQ2mrYiLwLwxia98jyjysadFEaRY1bwbXyGlA9ku6/47pU16vnHQUdfPJaDZ9/jrfygE63EWfhm3/6xEF0Qfy544n3uzIleUdX2SYDBkWHtZy4lDI9LIu1BLJujQsjIE58Vnox9Tj9qfQkNhjjzxt4FLfj0bWGMCSQRyPyo/H90Df5dFWCv/eA=
+  app: bball-battle
+  on:
+    repo: briancbarrow/bball-battle
