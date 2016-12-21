@@ -4,6 +4,8 @@
   "private": true,
   "devDependencies": {
     "bootstrap": "^3.3.7",
+    "chai": "^3.5.0",
+    "chai-http": "^3.0.0",
     "react-scripts": "0.8.4"
   },
   "dependencies": {
@@ -21,9 +23,9 @@
     "semantic-ui-react": "^0.62.2"
   },
   "scripts": {
+    "test": "react-scripts test --env=jsdom",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
 }

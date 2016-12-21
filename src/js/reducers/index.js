@@ -1,5 +1,5 @@
 import * as actions from '../actions/index';
-import {test} from '../test'
+import {playerList} from '../playerList'
 
 const initialState = {
   id1: null,
@@ -9,7 +9,7 @@ const initialState = {
   data1: [{}],
   data2: [{}],
   winner: null,
-  playerList: test,
+  playerList: playerList,
   stats: [
     {stat: "Effective FG%", value: "efgPct"},
     {stat: "Defensive Rating", value: "defRating"},

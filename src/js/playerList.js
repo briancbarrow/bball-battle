@@ -1,4 +1,4 @@
-const test = [
+const playerList = [
   {
     "firstName": "Alex",
     "lastName": "Abrines",
@@ -2743,4 +2743,4 @@ const test = [
   }
 ]
 
-export {test}
+export {playerList}
