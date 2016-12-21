@@ -6,6 +6,7 @@ import Player from './js/components/player';
 import Options from './js/components/ListOptions';
 import { Card, Button } from 'semantic-ui-react';
 
+
 class App extends Component {
   constructor(props) {
     super(props);
