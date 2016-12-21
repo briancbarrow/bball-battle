@@ -4,9 +4,6 @@ import * as actions from '../actions/index';
 import Stats from './stats';
 
 class Player extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
 
   componentWillMount() {
     this.props.advSplits(this.props.id, this.props.pos)

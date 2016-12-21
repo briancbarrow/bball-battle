@@ -35,7 +35,6 @@ class App extends Component {
     this.props.updateWinner(winner);
   }
   componentDidUpdate() {
-    // console.log(this.props)
     this.comparePlayers(this.props.data1, this.props.data2)
   }
 
@@ -46,7 +45,6 @@ class App extends Component {
     const player1 = event.target.player1.value
     const player2 = event.target.player2.value
     let oneIndex = this.props.playerList.findIndex(player => {
-      // console.log('testing', player.firstName + ' ' + player.lastName)
       return player.firstName + ' ' + player.lastName === player1
     })
 
@@ -62,7 +60,6 @@ class App extends Component {
   }
 
   render(props) {
-    // this.comparePlayers(this.props.data1, this.props.data2)
     return (
       <div className="App">
         <h1 className="main-header">BBALL BATTLE</h1>
