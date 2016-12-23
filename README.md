@@ -13,4 +13,4 @@ The user only needs to type in a player name in each input box. Exact spelling i
 * Add section showing most frequently compared players
 * Allow user to select which stats will be used in comparison
 
-*[BBALL BATTLE APP](bball-battle.herokuapp.com)*
+*[BBALL BATTLE APP](http://bball-battle.herokuapp.com)*
