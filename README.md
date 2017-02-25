@@ -1,3 +1,5 @@
+See server side code at https://github.com/briancbarrow/bball-server
+
 BBALL BATTLE
 =======
 BBall Battle is an app that allows you to compare stats between two NBA players.
