@@ -16,7 +16,8 @@ const initialState = {
     {stat: "Offensive Rating", value: "offRating"},
     {stat: "Assist/TO", value: "astTo"},
     {stat: "PIE", value: "pie"}
-  ]
+  ],
+  modalVisible: true
 }
 
 export const battleReducer = (state=initialState, action) => {
@@ -55,6 +56,9 @@ export const battleReducer = (state=initialState, action) => {
     }
     else if (action.type === actions.TEST) {
       return state
+    }
+    else if (action.type === actions.UPDATE_MODAL) {
+      return Object.assign({}, state, {modalVisible: false})
     }
     return state
 }

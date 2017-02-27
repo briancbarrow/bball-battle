@@ -5,6 +5,7 @@ import './App.css';
 import Player from './js/components/player';
 import Options from './js/components/ListOptions';
 import Footer from './js/components/footer'
+import IntroModal from './js/components/intro-modal'
 import { Card, Button } from 'semantic-ui-react';
 
 
@@ -63,6 +64,7 @@ class App extends Component {
   render(props) {
     return (
       <div className="App">
+        {this.props.modalVisible ? <IntroModal /> : ""}
         <h1 className="main-header">BBALL BATTLE</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" name="player1" list="player1-list" placeholder="Enter Player 1, eg: Kevin Durant" required/>
@@ -120,7 +122,8 @@ const mapStateToProps = (state) => {
     data2: state.data2,
     playerList: state.playerList,
     winner: state.winner,
-    stats: state.stats
+    stats: state.stats,
+    modalVisible: state.modalVisible
   }
 }
 

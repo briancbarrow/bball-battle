@@ -15,6 +15,11 @@ export const newPlayers = (data, pos) => ({
   pos
 });
 
+export const UPDATE_MODAL = 'UPDATE_MODAL'
+export const updateModal = () => ({
+  type: UPDATE_MODAL
+});
+
 export const NEW_ID = 'NEW_ID';
 export const newId = (id, pos) => ({
   type: NEW_ID,
