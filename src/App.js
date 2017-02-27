@@ -4,6 +4,7 @@ import * as actions from './js/actions/index';
 import './App.css';
 import Player from './js/components/player';
 import Options from './js/components/ListOptions';
+import Footer from './js/components/footer'
 import { Card, Button } from 'semantic-ui-react';
 
 
@@ -78,6 +79,7 @@ class App extends Component {
           {(this.props.id1) ? <Player id={this.props.id1} pos="data1"/> : ''}
           {(this.props.id2) ? <Player id={this.props.id2} pos="data2"/> : ''}
         </Card.Group>
+        <Footer />
       </div>
     );
   }

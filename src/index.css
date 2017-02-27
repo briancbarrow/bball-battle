@@ -13,3 +13,13 @@ body {
 .main-header {
   font-family: 'Wallpoet', cursive;
 }
+
+.footer {
+  margin: auto;
+  margin-top: 50px;
+}
+
+.contact-link {
+  margin: 10px;
+  color: black;
+}
